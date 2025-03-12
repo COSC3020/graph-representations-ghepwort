@@ -43,8 +43,8 @@ function convertToAdjMatrix(adjList) {
     // Populate the matrix
     for (var i = 0; i < adjList.length; i++) {
         for (var j = 0; j < adjList[i].length; j++) {
-            var neighbor = adjList[i][j];
-            matrix[i][neighbor] = 1;
+            var edge = adjList[i][j];
+            matrix[i][edge] = 1;
         }
     }
 

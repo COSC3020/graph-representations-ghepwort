@@ -30,15 +30,7 @@ The runtime of conversion to adjacency list is $\Theta(|V|^2)$. The outer loops 
 
 ### Convert to Adjacency Matrix
 
-The runtime of conversion to adjacency matrix is $\Theta(|V|^2)$ for best case of limited edges and $\Theta(|V| \cdot |E|)$ for the average and worst cases.
-
-The first set of loops to initilize an array of 0's has an outer loop that iterates over every vertex and the inner loops runs a number of vertex times. There is then a constant factor to populate with zeros. This gives the first loop a runtime of $|V| \cdot |V| \cdot 1$. The second set of loops loops has an outer loop that iterates over the every vertex and the inner loops iterates through the edges connected to the vertex. There is than a constant factor that inputs connected edges into the matrix. This gives the second loops a runtime of $|V| \cdot |E| \cdot 1$. The total runtimes end up being $|V| \cdot |V| \cdot 1 + |V| \cdot |E| \dot 1 = |V|^2 + |V| \cdot |E|$.
-
-In the best case senario there is a constant number of edges so $|E| = 1$. Analyzing this case of $|E|$ we get $|V|^2 + |V| \cdot 1 = \Theta(|V|^2)$ so in the best case the algorithm doesn't depend on the number of edges asymptoticaly so $\Theta(|V|^2)$.
-
-In the worst case senario the graph is conpleete so $|E| = |V|^2$. Analyzing this case of $|E|$ we get $|V|^2 + |V| \cdot |V|^2 = \Theta(|V|^3)$ so in the worst case the algorithm depends on the number of edges and verticies asymptoticaly so $\Theta(|V| \cdot |E|)$.
-
-In the average case senario the graph the vertex is connected to half of the other vertex's so $|E| = \frac{|V|^2}{2}$. Analyzing this case of $|E|$ we get $|V|^2 + |V| \cdot \frac{|V|^2}{2} = \Theta(|V|^3)$ so in the average case the algorithm depends on the number of edges and verticies asymptoticaly so $\Theta(|V| \cdot |E|)$.
+The runtime of conversion to adjacency matrix is $\Theta(|V|^2)$. The loops first set of loops runs through every vertex a vertex number of times to create a square matrix. The second set runs through every vertex and edge amount of times which is at maximum $|E| = |V|-1$. Combining this we get $|V| \cdot |V| + |V| \cdot |E| = |V|^2 + |V|^2 -|V| = 2|V|^2 - |V| = \Theta(|V|^2)$.
 
 
 ## Sources
